@@ -1,0 +1,196 @@
+{% extends "base.html" %} {% block title %}Student Profile{% endblock %}
+{% block content %}
+<!--testing this again-->
+<h3>
+</h3>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-start">
+                        <div class="w-100 ms-3">
+                            <h4 class="my-0">{{user.first_name}} {{user.last_name}}</h4>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+
+                        <p class="text-muted mb-1 font-13"><strong>School :</strong> <span class="ms-2"> Old Dominion University </span></p>
+                    </div>
+                </div>
+            </div> <!-- end card -->
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mb-3">Class Groups <i class="mdi mdi-account-multiple ms-1"></i></h4>
+
+                    <form method="POST" class="form-container">
+                        <label for="classnum"><b>Class Code</b></label>
+                        <input type="text" placeholder="Enter 4-digit code" id="classnum" name="classnum" required>
+
+                        <button type="submit" class="btn">Join Class</button>
+                    </form>
+                    <div class="list-group">
+                        {% for classgroup in user.classgroup %}
+                        {% if classgroup.class_name == "Calculus" or classgroup.class_name == "calculus" %}
+                        <a href="/calculus" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "US History" or classgroup.class_name == "us history" %}
+                        <a href="/ushistory" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Chemistry" or classgroup.class_name == "chemistry" %}
+                        <a href="/chemistry" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "English" or classgroup.class_name == "english" %}
+                        <a href="/english" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Geology" or classgroup.class_name == "geology" %}
+                        <a href="/geology" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "History" or classgroup.class_name == "history" %}
+                        <a href="/history" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Physics" or classgroup.class_name == "physics" %}
+                        <a href="/physics" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Biology" or classgroup.class_name == "biology" %}
+                        <a href="/biology" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Algebra" or classgroup.class_name == "algebra" %}
+                        <a href="/algebra" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Precalculus" or classgroup.class_name == "precalculus" %}
+                        <a href="/precalculus" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Programming" or classgroup.class_name == "programming" %}
+                        <a href="/programming" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Literature" or classgroup.class_name == "literature" %}
+                        <a href="/literature" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "World History" or classgroup.class_name == "world history" %}
+                        <a href="/worldhistory" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Science" or classgroup.class_name == "science" %}
+                        <a href="/science" class="list-group-item list-group-item-action">
+                        {% elif classgroup.class_name == "Math" or classgroup.class_name == "math" %}
+                        <a href="/math" class="list-group-item list-group-item-action">
+                        {% else %}
+                        <a href="/classgroup" class="list-group-item list-group-item-action">
+                        {% endif %}
+                            <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                <div class="w-100 ms-2">
+                                    <h5 class="mb-1">{{classgroup.class_name}}</h5>
+                                </div>
+                                <i class="mdi mdi-chevron-right h2"></i>
+                            </div>
+                        </a>
+                        {% endfor %}
+                        <a href="/english" class="list-group-item list-group-item-action">
+                            <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                <div class="w-100 ms-2">
+                                    <h5 class="mb-1">English</h5>
+                                </div>
+                                <i class="mdi mdi-chevron-right h2"></i>
+                            </div>
+                        </a>
+                        <a href="/calculus" class="list-group-item list-group-item-action">
+                            <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                <div class="w-100 ms-2">
+                                    <h5 class="mb-1">Calculus</h5>
+                                </div>
+                                <i class="mdi mdi-chevron-right h2"></i>
+                            </div>
+                        </a>
+                        <a href="/chemistry" class="list-group-item list-group-item-action">
+                            <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                <div class="w-100 ms-2">
+                                    <h5 class="mb-1">Chemistry</h5>
+                                </div>
+                                <i class="mdi mdi-chevron-right h2"></i>
+                            </div>
+                        </a>
+                        <a href="/geology" class="list-group-item list-group-item-action">
+                            <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                <div class="w-100 ms-2">
+                                    <h5 class="mb-1">Geology</h5>
+                                </div>
+                                <i class="mdi mdi-chevron-right h2"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mb-3"><a href="/myrec"> My Read Books List </a> </h4>
+                </div>
+            </div>
+        </div> <!-- end col-->
+
+        <div class="col-xl-7">
+            <div class="card">
+                <div class="card-body">
+                    <h3 align="center">ANNOUNCEMENTS</h3>
+                    <br>
+                    {% for note in notes %}
+                    <div class="border border-light p-2 mb-3">
+                        <div class="d-flex align-items-start">
+                            <div class="w-100">
+                                <h5 class=""> {{note.class_color}} <small class="text-muted"></small></h5>
+                                <div class="">
+                                    {{note.data}}
+                                    <br>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- Story Box-->
+                    <div class="border border-light p-2 mb-3">
+                        <div class="d-flex align-items-start">
+                            <div class="w-100">
+                                <h5 class=""> Prof. Oliver <small class="text-muted"> 1 hour ago</small></h5>
+                                <div class="">
+                                    Hello class, I have received word we can finally add "Accelerated C++"
+                                    to be apart of our resource library.
+                                    <br>
+                                </div>
+                            </div>
+
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Story Box-->
+                    <div class="border border-light p-2 mb-3">
+                        <div class="d-flex align-items-start">
+                            <div class="w-100">
+                                <h5 class="m-0">Prof. Oliver</h5>
+                                <p class="text-muted"><small>about 2 minutes ago</small></p>
+                            </div>
+                        </div>
+                        <p>Check out these awesome resources for those who are interested in CS!</p>
+
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/91JLJ+dZOUL.jpg" alt="post-img" class="rounded me-1" height="60">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51Uvm67LJuL._SX331_BO1,204,203,200_.jpg" alt="post-img" class="rounded me-1" height="60">
+                        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1444537944l/27110788._SX318_.jpg" alt="post-img" class="rounded" height="60">
+                    </div>
+
+                    <!-- Story Box-->
+                    <div class="border border-light p-2 mb-3">
+                        <div class="d-flex align-items-start">
+                            <div class="w-100">
+                                <h5 class="m-0">Prof. Oliver</h5>
+                                <p class="text-muted"><small>15 hours ago</small></p>
+                            </div>
+                        </div>
+                        <p>The video is very informtative! </p>
+
+                        <iframe src="https://player.vimeo.com/video/375468729?h=d063a6fe74" height="300" class="img-fluid border-0"></iframe>
+                    </div>
+
+                   <!-- <div class="text-center">
+                        <a href="javascript:void(0);" class="text-danger"><i class="mdi mdi-spin mdi-loading me-1"></i> Load more </a>
+                    </div> -->
+                </div>
+            </div> <!-- end card-->
+
+        </div> <!-- end col -->
+    </div>
+    <!-- end row-->
+
+</div>
+{% endblock %}

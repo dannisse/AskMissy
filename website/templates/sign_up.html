@@ -1,0 +1,96 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="signup__container">
+  <div class="container__child signup__thumbnail">
+    <div class="thumbnail__content text-center">
+      <h1 class="heading--primary">Welcome to AskMissy.</h1>
+      <h2 class="heading--secondary">Your Personalized Resource Finder</h2>
+    </div>
+    <div class="signup__overlay"></div>
+  </div>
+<form method="POST">
+  <h3 align="center">AskMissy Registration</h3>
+      <div class="form-row align-items-center">
+      <label class="mr-sm-2 sr-only">User</label>
+      <select class="custom-select mr-sm-2" name="usertype">
+        <option selected>Choose...</option>
+        <option value="Student">Student</option>
+        <option value="Teacher">Teacher</option>
+        <option value="Librarian">Librarian</option>
+      </select>
+    </div>
+    <div class="form-group">
+    <label for="fname">First name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="fname"
+      name="fname"
+      placeholder="First name"
+    />
+    </div>
+    <div class="form-group">
+    <label for="lname">Last name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lname"
+      name="lname"
+      placeholder="Last name"
+    />
+    </div>
+    <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password1">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password1"
+      name="password1"
+      placeholder="Enter password"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password2">Password (Confirm)</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password2"
+      name="password2"
+      placeholder="Confirm password"
+    />
+  </div>
+    <div class="form-group">
+    <label for="school">School</label>
+    <input
+      type="text"
+      class="form-control"
+      id="school"
+      name="school"
+      placeholder="Enter school"
+    />
+    </div>
+    <div class="form-group">
+    <label for="scode">School Code</label>
+    <input
+      type="number"
+      class="form-control"
+      id="scode"
+      name="scode"
+      placeholder="School code"
+    />
+    </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

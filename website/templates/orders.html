@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block title %}Orders{% endblock %}
+{% block content %}
+  <h3 align="center">Order History</h3>
+<br>
+    <form method="POST">
+    <div class="col-md-8">
+        <div class="portlet light bordered">
+            <div class="portlet-title tabbable-line">
+            </div>
+            <div class="portlet-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Authors</th>
+                            <th>ISBN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for req in books %}
+                        <tr>
+                            <th scope="row">{{req.id}}</th>
+                            <td> {{req.title}}</td>
+                            <td> {{req.authors}}</td>
+                            <td> {{req.isbn}} </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                <input type="submit" name="Sendrequests" value="Send Requests"></input>
+
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+{% endblock %}

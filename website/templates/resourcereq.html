@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}Res. Recommendations{% endblock %}
+{% block content %}
+  <h3 align="center">Book Requests</h3>
+<form method="POST">
+<label>
+    Title of Resource:
+    <input type="text" id="resourceName" name="resourceName">
+</label>
+<label>
+    Name of Author(s):
+    <input type="text" id="author" name="author">
+</label>
+<br>
+<label>
+    Publication Date (Year):
+    <input type="text" id="year" name="year">
+</label>
+<label>
+    ISBN Number:
+    <input type="text" id="isbn" name="isbn">
+</label>
+<br>
+<br>
+
+<input type="submit" value="Submit">
+<input type="reset" value="Clear">
+</form>
+
+{% endblock %}

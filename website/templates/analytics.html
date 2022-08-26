@@ -1,0 +1,190 @@
+{% extends "base.html" %} {% block title %}Analytics{% endblock %}
+{% block content %}
+  <h3 align="center">Class Groups</h3>
+<section class="container">
+                <div class="content__inner">
+                    <header class="content__title">
+
+                        <div class="actions">
+                            <a href="" class="actions__item zmdi zmdi-trending-up"></a>
+                            <a href="" class="actions__item zmdi zmdi-check-all"></a>
+
+                            <div class="dropdown actions__item">
+                                <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
+
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="toolbar">
+                        <div class="toolbar__label">
+                            4 Groups
+                        </div>
+
+                        <div class="actions">
+                           <i class="actions__item zmdi zmdi-search" data-sa-action="toolbar-search-open"></i>
+                            <a href="" class="actions__item zmdi zmdi-info-outline hidden-xs-down"></a>
+
+                            <div class="dropdown actions__item hidden-xs-down">
+                                <i class="zmdi zmdi-more-vert" data-toggle="dropdown"></i>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="" class="dropdown-item">Refresh</a>
+                                    <a href="" class="dropdown-item">Delete</a>
+                                    <a href="" class="dropdown-item">Settings</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!---<div class="toolbar__search">
+                            <input type="text" placeholder="Search...">
+
+                            <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-sa-action="toolbar-search-close"></i>
+                        </div>
+                    </div> -->
+
+                    <div class="row groups">
+                    {% for classgroup in user.classgroup %}
+                        <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+                            <div class="groups__item">
+                                {% if classgroup.class_name == "Calculus" or classgroup.class_name == "calculus" %}
+                                <a href="/calculus" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "US History" or classgroup.class_name == "us history" %}
+                                <a href="/ushistory" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Chemistry" or classgroup.class_name == "chemistry" %}
+                                <a href="/chemistry" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "English" or classgroup.class_name == "english" %}
+                                <a href="/english" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Geology" or classgroup.class_name == "geology" %}
+                                <a href="/geology" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "History" or classgroup.class_name == "history" %}
+                                <a href="/history" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Physics" or classgroup.class_name == "physics" %}
+                                <a href="/physics" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Biology" or classgroup.class_name == "biology" %}
+                                <a href="/biology" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Algebra" or classgroup.class_name == "algebra" %}
+                                <a href="/algebra" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Precalculus" or classgroup.class_name == "precalculus" %}
+                                <a href="/precalculus" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Programming" or classgroup.class_name == "programming" %}
+                                <a href="/programming" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Literature" or classgroup.class_name == "literature" %}
+                                <a href="/literature" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "World History" or classgroup.class_name == "world history" %}
+                                <a href="/worldhistory" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Science" or classgroup.class_name == "science" %}
+                                <a href="/science" class="list-group-item list-group-item-action">
+                                {% elif classgroup.class_name == "Math" or classgroup.class_name == "math" %}
+                                <a href="/math" class="list-group-item list-group-item-action">
+                                {% else %}
+                                <a href="/classgroup" class="list-group-item list-group-item-action">
+                                {% endif %}
+                                    <div class="groups__info">
+                                        <strong>{{classgroup.class_name}}</strong>
+                                        <small>Students</small>
+                                    </div>
+                                </a>
+
+                                <div class="actions">
+                                    <div class="dropdown actions__item">
+                                        <i class="zmdi zmdi-more-vert" data-toggle="dropdown"></i>
+
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="">Edit</a>
+                                            <a class="dropdown-item" href="" data-demo-action="delete-listing">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    <!--<div class="row groups">-->
+                        <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+                            <div class="groups__item">
+                        <a href="/" class="list-group-item list-group-item-action">
+                                    <div class="groups__info">
+                                        <strong>Team Red</strong>
+                                        <small>10 Students</small>
+                                    </div>
+                                </a>
+
+                                <div class="actions">
+                                    <div class="dropdown actions__item">
+                                        <i class="zmdi zmdi-more-vert" data-toggle="dropdown"></i>
+
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="">Edit</a>
+                                            <a class="dropdown-item" href="" data-demo-action="delete-listing">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+                            <div class="groups__item">
+                        <a href="/Calculus" class="list-group-item list-group-item-action">
+                                    <div class="groups__info">
+                                        <strong>Team Blue</strong>
+                                        <small>12 Students</small>
+                                    </div>
+                                </a>
+
+                                <div class="actions">
+                                    <div class="dropdown actions__item">
+                                        <i class="zmdi zmdi-more-vert" data-toggle="dropdown"></i>
+
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="">Edit</a>
+                                            <a class="dropdown-item" href="" data-demo-action="delete-listing">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+                            <div class="groups__item">
+                        <a href="/greenGroup" class="list-group-item list-group-item-action">
+                                    <div class="groups__info">
+                                        <strong>Team Green</strong>
+                                        <small>4 Students</small>
+                                    </div>
+                                </a>
+                                <div class="actions">
+                                    <div class="dropdown actions__item">
+                                        <i class="zmdi zmdi-more-vert" data-toggle="dropdown"></i>
+
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="">Edit</a>
+                                            <a class="dropdown-item" href="" data-demo-action="delete-listing">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+                            <div class="groups__item">
+                        <a href="/yellowGroup" class="list-group-item list-group-item-action">
+                                    <div class="groups__info">
+                                        <strong>Team Yellow</strong>
+                                        <small>13 Students</small>
+                                    </div>
+                                </a>
+                                <div class="actions">
+                                    <div class="dropdown actions__item">
+                                        <i class="zmdi zmdi-more-vert" data-toggle="dropdown"></i>
+
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="">Edit</a>
+                                            <a class="dropdown-item" href="" data-demo-action="delete-listing">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+{% endblock %}

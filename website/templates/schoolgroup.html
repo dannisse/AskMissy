@@ -1,0 +1,380 @@
+{% extends "base.html" %} {% block title %}School Group{% endblock %}
+{% block content %}
+  <h3 align="center"> </h3>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdeys">
+    <div class="row" id="user-profile">
+        <div class="col-lg-3 col-md-4 col-sm-4">
+            <div class="main-box clearfix">
+
+                <div class="profile-status">
+                    <i class="fa fa-check-circle"></i> Online
+                </div>
+                <!--<img src="https://s.pngkit.com/png/small/17-178229_school-building-icon-school-icon-vector-png.png" alt="" class="profile-img img-responsive center-block"> -->
+                <div class="profile-label">
+                    <span class="label label-danger"> {{user.school}}</span>
+                </div>
+
+                <div class="profile-since">
+                    Member Since: Jan 2022
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-9 col-md-8 col-sm-8">
+            <div class="main-box clearfix">
+                <div class="profile-header">
+                    <h3><span>School Group</span></h3>
+                </div>
+
+                <div class="tabs-wrapper profile-tabs">
+
+
+                    <div class="tab-content">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th>Classes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for x in classinfo %}
+                                <tr>
+                                    <td>{{x}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <ul class="nav nav-tabs"> </ul>
+                        <div class="tab-pane fade in active" id="tab-activity">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">
+                                                <i class="fa fa-comment"></i>
+                                            </td>
+                                            <td>
+                                                Teacher1  posted a comment in <a href="#">Possible Resources: Forum</a> project.
+                                            </td>
+                                            <td>
+                                                2022/08/08 12:08
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <i class="fa fa-truck"></i>
+                                            </td>
+                                            <td>
+                                                Teacher1  changed order status from <span class="label label-primary">Pending</span> to <span class="label label-success">Completed</span>
+                                            </td>
+                                            <td>
+                                                2022/08/08 12:08
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <i class="fa fa-check"></i>
+                                            </td>
+                                            <td>
+                                                Teacher1  posted a comment in <a href="#">Possible Resources: Forum</a> discussion.
+                                            </td>
+                                            <td>
+                                                2022/08/08 12:08
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <i class="fa fa-users"></i>
+                                            </td>
+                                            <td>
+                                                Teacher1  posted a comment in <a href="#">Possible Resources: Forum</a> project.
+                                            </td>
+                                            <td>
+                                                2022/08/08 12:08
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <i class="fa fa-heart"></i>
+                                            </td>
+                                            <td>
+                                                Teacher1  changed order status from <span class="label label-warning">On Hold</span> to <span class="label label-danger">Disabled</span>
+                                            </td>
+                                            <td>
+                                                2022/08/08 12:08
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <i class="fa fa-check"></i>
+                                            </td>
+                                            <td>
+                                                Teacher1  posted a comment in <a href="#">Possible Resources: Forum</a> discussion.
+                                            </td>
+                                            <td>
+                                                2022/08/08 12:08
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <i class="fa fa-truck"></i>
+                                            </td>
+                                            <td>
+                                                Teacher1  changed order status from <span class="label label-primary">Priority</span> to <span class="label label-success">Completed</span>
+                                            </td>
+                                            <td>
+                                                2022/08/08 12:08
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <i class="fa fa-users"></i>
+                                            </td>
+                                            <td>
+                                                Teacher1  posted a comment in <a href="#">Possible Resources: Forum</a> project.
+                                            </td>
+                                            <td>
+                                                2022/08/08 12:08
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="tab-Faculty">
+                            <ul class="widget-users row">
+                                <li class="col-md-6">
+                                    <div class="img">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">
+                                            <a href="#">Teacher1 </a>
+                                        </div>
+                                        <div class="time">
+                                            <i class="fa fa-clock-o"></i> Last online: 5 minutes ago
+                                        </div>
+                                        <div class="type">
+                                            <span class="label label-danger">Admin</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-6">
+                                    <div class="img">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">
+                                            <a href="#">Principal</a>
+                                        </div>
+                                        <div class="time online">
+                                            <i class="fa fa-check-circle"></i> Online
+                                        </div>
+                                        <div class="type">
+                                            <span class="label label-warning"> </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-6">
+                                    <div class="img">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">
+                                            <a href="#">Head Librarian</a>
+                                        </div>
+                                        <div class="time online">
+                                            <i class="fa fa-check-circle"></i> Online
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-6">
+                                    <div class="img">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">
+                                            <a href="#">Teacher2</a>
+                                        </div>
+                                        <div class="time">
+                                            <i class="fa fa-clock-o"></i> Last online: Thursday
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-6">
+                                    <div class="img">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">
+                                            <a href="#">Teacher3</a>
+                                        </div>
+                                        <div class="time">
+                                            <i class="fa fa-clock-o"></i> Last online: 1 week ago
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-6">
+                                    <div class="img">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">
+                                            <a href="#">Asst. Principal</a>
+                                        </div>
+                                        <div class="time">
+                                            <i class="fa fa-clock-o"></i> Last online: 1 month ago
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-6">
+                                    <div class="img">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">
+                                            <a href="#">Asst. Librarian</a>
+                                        </div>
+                                        <div class="time online">
+                                            <i class="fa fa-check-circle"></i> Online
+                                        </div>
+                                        <div class="type">
+                                            <span class="label label-warning"> </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-md-6">
+                                    <div class="img">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">
+                                            <a href="#">Head Librarian</a>
+                                        </div>
+                                        <div class="time online">
+                                            <i class="fa fa-check-circle"></i> Online
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <br>
+                            <a href="#" class="btn btn-success pull-right">View all users</a>
+                        </div>
+
+                        <div class="tab-pane fade" id="tab-chat">
+                            <div class="conversation-wrapper">
+                                <div class="conversation-content">
+                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 340px;">
+                                        <div class="conversation-inner" style="overflow: hidden; width: auto; height: 340px;">
+
+                                            <div class="conversation-item item-left clearfix">
+                                                <div class="conversation-user">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                                </div>
+                                                <div class="conversation-body">
+                                                    <div class="name">
+                                                        Teacher 1
+                                                    </div>
+                                                    <div class="time hidden-xs">
+                                                        September 21, 2022 18:28
+                                                    </div>
+                                                    <div class="text">
+                                                        What is the status of the CS resource I requested 2 weeks ago?
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="conversation-item item-right clearfix">
+                                                <div class="conversation-user">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                                </div>
+                                                <div class="conversation-body">
+                                                    <div class="name">
+                                                        Head Librarian
+                                                    </div>
+                                                    <div class="time hidden-xs">
+                                                        September 21, 2022 12:45
+                                                    </div>
+                                                    <div class="text">
+                                                        Approved. Arriving in 2 weeks.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="conversation-item item-right clearfix">
+                                                <div class="conversation-user">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                                </div>
+                                                <div class="conversation-body">
+                                                    <div class="name">
+                                                        Head Librarian
+                                                    </div>
+                                                    <div class="time hidden-xs">
+                                                        September 21, 2022 12:45
+                                                    </div>
+                                                    <div class="text">
+                                                        How are the students liking the new Chem resource book?
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="conversation-item item-left clearfix">
+                                                <div class="conversation-user">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                                </div>
+                                                <div class="conversation-body">
+                                                    <div class="name">
+                                                        Teacher 1
+                                                    </div>
+                                                    <div class="time hidden-xs">
+                                                        September 21, 2022 18:28
+                                                    </div>
+                                                    <div class="text">
+                                                        Students love it!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="conversation-item item-right clearfix">
+                                                <div class="conversation-user">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive"  alt="">
+                                                </div>
+                                                <div class="conversation-body">
+                                                    <div class="name">
+                                                        Teacher 1
+                                                    </div>
+                                                    <div class="time hidden-xs">
+                                                        September 21, 2022 12:45
+                                                    </div>
+                                                    <div class="text">
+                                                        Awesome, thank you.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div>
+                                        <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+                                    </div>
+                                </div>
+                                <div class="conversation-new-message">
+                                    <form>
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="2" placeholder="Enter your message..."></textarea>
+                                        </div>
+
+                                        <div class="clearfix">
+                                            <button type="submit" class="btn btn-success pull-right">Send message</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

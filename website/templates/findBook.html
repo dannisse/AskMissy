@@ -1,0 +1,106 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<head>
+    <style>
+        table, td, th{
+        border: 1px solid;
+        }
+        th{
+        height: "10";
+        }
+        table{
+        width: 95%;
+        border-collapse: collapse;
+        }
+        table.center{
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+    </style>
+
+</head>
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+
+{% extends "base.html" %} {% block title %}Find Book{% endblock %}
+{% block content %}
+<center><h2>Find your book now:</h2>
+<form method="POST" class="form-container">
+                        <label for="bookTitle"><b>Basic Book Search</b></label>
+                        <input type="text" placeholder="Enter book title" id="bookTitle" name="bookTitle">
+                        <input type="text" placeholder="Enter author" id="author" name="author">
+                        <input type="text" placeholder="Enter year published" id="year" name="year">
+                        <button type="submit" class="btn" aria-atomic="true">Search for book</button>
+                    </form>
+    </center>
+{% if book %}
+<center><h5>The books you chose are:</h5></center>
+<center>
+    {% if title %}
+    <b>Title:</b> '{{ title }}'
+    {% endif %}
+    {% if author %}
+    <b>Author:</b> '{{ author }}'
+    {% endif %}
+    {% if year %}
+    <b>Year:</b> '{{ year }}'
+    {% endif %}</center>
+<table id="books" class = "center">
+    <thead>
+        <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Author(s)</th>
+            <th>Year published</th>
+            <th>Average rating</th>
+            <th>Isbn</th>
+            <th>Cover</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for page in book %}
+    <tr>
+        <td>{{ page.book_id }}</td>
+        <td>{{ page.title }}</td>
+        <td>{{ page.authors }}</td>
+        <td>{{ page.original_publication_year }}</td>
+        <td>{{ page.average_rating }}</td>
+        <td>{{ page.isbn }}</td>
+        <td>{% if page.image_url %}
+            <img src={{page.image_url}} width=90%>
+            {% else %}
+            <img src={{page.small_image_url}} width=90%>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% else %}
+<center><h5>No book selected, choose one now!</h5></center>
+{% endif %}
+<form method="POST" class="form-container">
+    <p>enter book id:</p>
+    <input type="text" placeholder="Enter book id" id="book_id" name="book_id">
+    <button type="submit" class="btn" aria-atomic="true">Search</button>
+
+</form>
+
+<p>if you liked this book: {{ first.title }} then you'll like {{ second.title }}</p>
+
+{% endblock %}
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#books').DataTable({
+        "searching": false
+      });
+    });
+  </script>
+{% endblock %}

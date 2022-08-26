@@ -1,0 +1,18 @@
+﻿FLASK IN PYCHARM TUTORIAL 
+
+
+1. Download and install pycharm and anaconda
+
+
+2. In pycharm terminal type this:
+   1. py -3 -m venv venv
+   2. venv\Scripts\activate
+   3. pip install Flask
+   4. pip install Flask-SQLAlchemy
+   5. pip install Flask-login
+   6. Pip install Flask-migrate
+
+
+3. Make sure run/debug configuration is as follows (pertaining to your environment):  
+4. In File->settings->Project->python interpreter:
+   1. Click the “+” and add Flask, Flask-sqlalchemy, Flask-login, Flask-migrate.

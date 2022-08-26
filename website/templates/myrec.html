@@ -1,0 +1,112 @@
+<head>
+    <style>
+        table, td, th{
+        border: 1px solid;
+        }
+        th{
+        height: "10";
+        }
+        table{
+        width: 95%;
+        border-collapse: collapse;
+        }
+        table.center{
+        margin-left: auto;
+        margin-right: auto;
+        }
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          grid-template-rows: 40px 60px 60px 60px 60px;
+          gap: 10px;
+          background-color: #e9e9e9;
+          padding: 10px;
+        }
+
+        .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-align: center;
+          padding: 10px 0;
+          font-size: 20px;
+        }
+
+    </style>
+
+</head>
+
+{% extends "base.html" %} {% block title %}My recommendations{% endblock %}
+{% block content %}
+<center><h2>Find Recommendations For Me:</h2></center>
+<h5>Hello {{user.first_name}} {{user.last_name}}</h5>
+<p>Your Read History is:</p>
+{% if past %}
+<table id="books" class = "center">
+    <thead>
+        <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Author(s)</th>
+            <th>Year published</th>
+            <th>My Rating</th>
+            <th>ISBN</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for page in past %}
+    <tr>
+        <td>{{ page.book_id }}</td>
+        <td>{{ page.title }}</td>
+        <td>{{ page.authors }}</td>
+        <td>{{ page.original_publication_year }}</td>
+        <td>{{ page.rating }}</td>
+        <td>{{ page.isbn }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No books reviewed yet, go pick up a book!</p>
+{% endif %}
+<form method="POST" class="form-container">
+    <p>Enter Book Genre:</p>
+    <input type="text" placeholder="Enter Genre" id="tag" name="tag">
+    <button type="submit" class="btn" aria-atomic="true">Search</button>
+</form>
+<p>You Searched For the Genre: <b>{{genre}}</b></p>
+<table id="books2" class = "center">
+    <thead>
+        <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Author(s)</th>
+            <th>Year Published</th>
+            <th>Average Rating</th>
+            <th>ISBN</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for page in future %}
+    <tr>
+        <td>{{ page.book_id }}</td>
+        <td>{{ page.title }}</td>
+        <td>{{ page.authors }}</td>
+        <td>{{ page.original_publication_year }}</td>
+        <td>{{ page.average_rating }}</td>
+        <td>{{ page.isbn }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#books').DataTable({
+        "searching": false
+      });
+      $('#books2').DataTable({
+        "searching": false
+      });
+    });
+  </script>
+{% endblock %}
